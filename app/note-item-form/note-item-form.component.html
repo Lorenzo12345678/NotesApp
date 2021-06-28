@@ -1,0 +1,15 @@
+<form (ngSubmit) = "onCreateNote()" #f = "ngForm">
+    <div class="mb-3">
+    <label for="title" class="form-label">Title</label>
+    <input [(ngModel)] = "note.title" type="text" class="form-control" name="title" required>
+    </div>
+    <div class="mb-3">
+    <label for="description" class="form-label">Description</label>
+    <textarea class="form-control" [(ngModel)] = "note.description" name="description" required></textarea>
+    </div>
+    <div class="mb-3">
+        <label for="argument" class="form-label">Argument</label>
+        <input type="text" class="form-control" [(ngModel)] = "note.argument" name="argument" required>
+    </div>
+    <button type="submit" class="btn btn-primary" [disabled] = "!f.valid">Submit</button>
+</form>

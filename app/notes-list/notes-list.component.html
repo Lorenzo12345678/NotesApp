@@ -1,0 +1,19 @@
+<div class="container list">
+    <div class="row">
+        <div class="col-6 ">
+            <div class="list-group">
+                <button type="button" class="list-group-item list-group-item-action active" aria-current="true">
+                    Note
+                </button>
+                
+                <button *ngFor = "let notex of notes; let i = index"  class="list-group-item list-group-item-action">
+                    <a [routerLink] = "['/item', i]"><app-note-item [note] = "notex" ></app-note-item></a>
+                </button>
+            </div>
+        </div>
+
+        <div class="col-6">
+            <app-note-item-form></app-note-item-form>
+        </div>    
+    </div>
+</div>

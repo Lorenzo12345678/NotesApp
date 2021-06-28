@@ -1,0 +1,29 @@
+<div class="modal fade" id = "exampleModal"  tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" (hidden.bs.modal) = "closeModal($event)">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Edit</h5>
+          <button type="button" class="btn btn-danger" data-bs-dismiss="modal" aria-label="Close">X</button>
+        </div>
+        <div class="modal-body">
+          <form #form = "ngForm">
+            <div class="mb-3">
+              <label for="recipient-name" class="col-form-label">Titolo:</label>
+              <input type="text" class="form-control" name="title" [ngModel] = " note.title " >
+            </div>
+            <div class="mb-3">
+              <label for="message-text" class="col-form-label">Descrizione:</label>
+              <textarea class="form-control" name="description" [ngModel] = "note.description"></textarea>
+            </div>
+            <div class="mb-3">
+                <label for="message-text" class="col-form-label">Argomento:</label>
+                <input type="text" class="form-control" name="argument" [ngModel] = "note.argument">
+              </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click) = "onConfirm($event)" >Save</button>
+        </div>
+      </div>
+    </div>
+  </div>
